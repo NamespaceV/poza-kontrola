@@ -15,6 +15,13 @@ run/main_scene="uid://tk2vhowixmy5"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=960
+window/stretch/mode="viewport"
+
 [input]
 
 u={
