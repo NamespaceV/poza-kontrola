@@ -6,7 +6,7 @@ const IMPULSE_STR = 2_000
 const BOOM_IMPULSE_STR = 10_000
 
 
-func push_from_player(player:Node2D, c:KinematicCollision2D):
+func push_from_player(_player:Node2D, c:KinematicCollision2D):
 	apply_force(-1 *  IMPULSE_STR * c.get_normal())
 
 func push_from_boom(boom_pos:Vector2):
