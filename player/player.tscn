@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf1sgvdbmmljs"]
+
+[ext_resource type="Script" uid="uid://vgh2umi8a3f0" path="res://player/player.gd" id="1_oul6g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
+radius = 60.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_oul6g")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = 1
+position = Vector2(2, 1)
+polygon = PackedVector2Array(1, -60, -42, -46, -61, 0, -44, 42, -2, 59, 41, 40, 57, 1, 40, -43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h2yge")

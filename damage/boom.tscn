@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwliyklxqiwpj"]
+
+[ext_resource type="Script" uid="uid://d2imo84d6mdi8" path="res://damage/boom.gd" id="1_v6cwd"]
+
+[node name="Boom" type="Node2D"]
+script = ExtResource("1_v6cwd")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 0.20999998, 0.20999998, 1)
+polygon = PackedVector2Array(-104, -129, -35, -247, 93, -60, 280, 68, 182, 68, -45, 334, -163, 226, -468, 29, -143, -50)

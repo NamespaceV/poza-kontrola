@@ -1,9 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://tk2vhowixmy5"]
+[gd_scene load_steps=5 format=3 uid="uid://tk2vhowixmy5"]
 
-[ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://code.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="2_h2yge"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_ig7tw")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(1152.5, 49)
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(98, 74, 81, 117, 104, 151, 132, 118)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(50, 600)
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(137, 180)
+
+[node name="Debris" type="Node2D" parent="."]
+
+[node name="Debris1" parent="Debris" instance=ExtResource("2_h2yge")]
+position = Vector2(214, 93)
+
+[node name="Debris2" parent="Debris" instance=ExtResource("2_h2yge")]
+position = Vector2(256, 215)
+
+[node name="Debris3" parent="Debris" instance=ExtResource("2_h2yge")]
+position = Vector2(208, 275)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(571, 10.999999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+position = Vector2(0.25, -11.499999)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Wall"]
+color = Color(0.6079819, 0.27240488, 0.12234033, 1)
+polygon = PackedVector2Array(-568, -4.999999, 582, -6.999999, 580, 7.000001, -570, 15.000001)
+
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2(573, 635)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+position = Vector2(1.5, 1.500001)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Wall2"]
+color = Color(0.6079819, 0.27240488, 0.12234033, 1)
+polygon = PackedVector2Array(-568, -4.999999, 582, -6.999999, 580, 7.000001, -570, 15.000001)
+
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
+position = Vector2(1153, 321)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
+position = Vector2(0.5, 1.500001)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Wall3"]
+color = Color(0.6079819, 0.27240488, 0.12234033, 1)
+polygon = PackedVector2Array(-9, -290, 12, -292, 16, 312, -11, 309)
+
+[node name="Wall4" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, 321)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
+position = Vector2(0.5, 1.500001)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Wall4"]
+color = Color(0.6079819, 0.27240488, 0.12234033, 1)
+polygon = PackedVector2Array(-9, -290, 12, -292, 16, 312, -11, 309)
