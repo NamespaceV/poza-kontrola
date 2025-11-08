@@ -14,4 +14,5 @@ func _process(_delta: float) -> void:
 	var d = get_all_debris(get_tree().root)
 	if d.all(func (n): return n.goal > 0):
 		print("WIN ", d.size())
+		GLOBAL.next_level_sfx()
 		get_tree().change_scene_to_packed(next_level)

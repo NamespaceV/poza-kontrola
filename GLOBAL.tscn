@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://baud2ldkbx5he"]
+[gd_scene load_steps=4 format=3 uid="uid://baud2ldkbx5he"]
 
-[ext_resource type="Script" uid="uid://3iqe7r831eii" path="res://global.gd" id="1_ts1vd"]
+[ext_resource type="Script" uid="uid://3iqe7r831eii" path="res://GLOBAL.gd" id="1_ts1vd"]
 [ext_resource type="AudioStream" uid="uid://6n8mw1td4vrl" path="res://audio/BeepBox-BGM.mp3" id="2_1ankf"]
+[ext_resource type="AudioStream" uid="uid://b3kn285clts0e" path="res://audio/next-level.wav" id="3_3wdus"]
 
 [node name="Global" type="Node2D"]
 script = ExtResource("1_ts1vd")
@@ -10,3 +11,6 @@ script = ExtResource("1_ts1vd")
 stream = ExtResource("2_1ankf")
 autoplay = true
 parameters/looping = true
+
+[node name="NextLevel" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3wdus")

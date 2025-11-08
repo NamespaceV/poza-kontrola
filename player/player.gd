@@ -27,4 +27,5 @@ func _physics_process(delta: float) -> void:
 		var a = attacks.pick_random().instantiate() as Node2D
 		$Dmg.add_child(a)
 		anim.play("dmg")
+		($AudioStreamPlayer2D as AudioStreamPlayer2D).play()
 	

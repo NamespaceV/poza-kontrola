@@ -26,6 +26,9 @@ func _integrate_forces(state):
 		velocity = velocity.normalized() * MAX_SPEED
 		state.linear_velocity = velocity
 
+func binned():
+	$AudioStreamPlayer2D.play()
+
 func _process(_delta: float) -> void:
 	modulate = ok_color if goal > 0 else not_ok_color
 	if global_position.x > 0 && global_position.x < 1920 \
