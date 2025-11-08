@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://b7rlrdbpdhfv0"]
 
 [ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_udvx3"]
-[ext_resource type="PackedScene" uid="uid://cmxl67tohet2p" path="res://levels/the_end.tscn" id="2_1xfnq"]
+[ext_resource type="PackedScene" uid="uid://g06rtq1ek2mn" path="res://levels/level4.tscn" id="2_udvx3"]
 [ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="3_6uckl"]
 [ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="4_d6jip"]
 [ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="5_kkm8t"]
@@ -50,7 +50,7 @@ _data = {
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_udvx3")
-next_level = ExtResource("2_1xfnq")
+next_level = ExtResource("2_udvx3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 modulate = Color(0.44195396, 0.30823013, 0.07724511, 1)

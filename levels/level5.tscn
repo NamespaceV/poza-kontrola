@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=4 uid="uid://dol21lqgy8kcm"]
+
+[ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_0dsjn"]
+[ext_resource type="PackedScene" uid="uid://cmxl67tohet2p" path="res://levels/the_end.tscn" id="2_ldkys"]
+[ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="3_dm5g0"]
+[ext_resource type="Texture2D" uid="uid://buh252og38ico" path="res://icon.svg" id="4_ldkys"]
+[ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="4_vp6pq"]
+[ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="5_66nwl"]
+[ext_resource type="PackedScene" uid="uid://db761xxnodbrx" path="res://goal/goal.tscn" id="6_t5gjd"]
+[ext_resource type="Script" uid="uid://iq2a726ws01e" path="res://levels/line_2d.gd" id="8_dm5g0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dm5g0"]
+radius = 20.0
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_0dsjn")
+next_level = ExtResource("2_ldkys")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+modulate = Color(0.44195396, 0.30823013, 0.07724511, 1)
+position = Vector2(960, 540)
+tile_map_data = PackedByteArray("AAAJAAAAAAABAAAAAAAAAAUAAAABAAAAAAD2//r/AAABAAAAAAD3//r/AAABAAAAAAD4//r/AAABAAAAAAD5//r/AAABAAAAAAD6//r/AAABAAAAAAD7//r/AAABAAAAAAD8//r/AAABAAAAAAD9//r/AAABAAAAAAD+//r/AAABAAAAAAD///r/AAABAAAAAAAAAPr/AAABAAAAAAABAPr/AAABAAAAAAACAPr/AAABAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAAFAPr/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAJAPv/AAABAAAAAAAJAPz/AAABAAAAAAAJAP3/AAABAAAAAAAJAP7/AAABAAAAAAAJAP//AAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAAAAAD6/wUAAAABAAAAAAD5/wUAAAABAAAAAAD4/wUAAAABAAAAAAD3/wUAAAABAAAAAAD2/wUAAAABAAAAAAD2/wQAAAABAAAAAAD2/wMAAAABAAAAAAD2/wIAAAABAAAAAAD2/wEAAAABAAAAAAD2/wAAAAABAAAAAAD2////AAABAAAAAAD2//v/AAABAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAAAAAD2//7/AAABAAAAAAD3//v/AAACAAAAABAIAPv/AAACAAAAAAAIAAQAAAACAAAAACAJAAQAAAABAAAAAAD3/wQAAAACAAAAADD4/wMAAAACAAAAACD6/wMAAAABAAAAAAD8/wMAAAABAAAAAAD+/wMAAAABAAAAAAAAAAMAAAABAAAAAAACAAMAAAABAAAAAAAEAAMAAAABAAAAAAAGAAAAAAABAAAAAAAFAAAAAAABAAAAAAAEAAAAAAABAAAAAAADAAAAAAABAAAAAAACAAAAAAABAAAAAAABAAAAAAABAAAAAAAAAAAAAAABAAAAAAD//wAAAAABAAAAAAD+/wAAAAABAAAAAAD9/wAAAAABAAAAAAD8/wAAAAABAAAAAAD7/wAAAAABAAAAAAD6/wAAAAABAAAAAAD5/wAAAAABAAAAAAD4/wEAAAACAAAAABD3/wEAAAABAAAAAAD6//7/AAABAAAAAAAGAP//AAACAAAAACD4/wAAAAACAAAAACD8//7/AAABAAAAAAD+//7/AAABAAAAAAD///7/AAABAAAAAAABAP7/AAABAAAAAAACAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAAMAAAABAAAAAAA=")
+tile_set = ExtResource("3_dm5g0")
+
+[node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("start", "end")]
+points = PackedVector2Array(547, 596, 1246, 505)
+width = 5.0
+default_color = Color(0.64, 0.64, 0.64, 1)
+script = ExtResource("8_dm5g0")
+start = NodePath("../Ball")
+end = NodePath("../Player")
+
+[node name="Ball" type="RigidBody2D" parent="."]
+position = Vector2(932, 718)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_dm5g0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ldkys")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Ball"]
+node_a = NodePath("..")
+node_b = NodePath("../../Player")
+length = 85.0
+rest_length = 60.0
+
+[node name="Player" parent="." instance=ExtResource("4_vp6pq")]
+position = Vector2(933, 719)
+
+[node name="Debris" type="Node2D" parent="."]
+
+[node name="Debris1" parent="Debris" instance=ExtResource("5_66nwl")]
+position = Vector2(1212, 994)
+gravity_scale = 0.5
+
+[node name="Debris2" parent="Debris" instance=ExtResource("5_66nwl")]
+position = Vector2(592, 1010)
+gravity_scale = 0.5
+
+[node name="Debris3" parent="Debris" instance=ExtResource("5_66nwl")]
+position = Vector2(204, 992)
+gravity_scale = 0.5
+
+[node name="Debris4" parent="Debris" instance=ExtResource("5_66nwl")]
+position = Vector2(1601, 1006)
+gravity_scale = 0.5
+
+[node name="Goal" parent="." instance=ExtResource("6_t5gjd")]
+position = Vector2(148, 543)
+scale = Vector2(10, 10)
