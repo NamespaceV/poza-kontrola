@@ -1,55 +1,39 @@
-[gd_scene load_steps=7 format=4 uid="uid://g06rtq1ek2mn"]
+[gd_scene load_steps=7 format=4 uid="uid://bl5mg24vkaewe"]
 
-[ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_8s3b3"]
-[ext_resource type="PackedScene" uid="uid://dol21lqgy8kcm" path="res://levels/level5.tscn" id="2_8s3b3"]
-[ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="3_mj76i"]
-[ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="4_mdw0g"]
-[ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="5_naavy"]
-[ext_resource type="PackedScene" uid="uid://db761xxnodbrx" path="res://goal/goal.tscn" id="6_gh4cy"]
+[ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_r6vdu"]
+[ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="2_21xmu"]
+[ext_resource type="PackedScene" uid="uid://b7rlrdbpdhfv0" path="res://levels/level5.tscn" id="2_s1bpp"]
+[ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="3_8i3m3"]
+[ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="4_rmy57"]
+[ext_resource type="PackedScene" uid="uid://db761xxnodbrx" path="res://goal/goal.tscn" id="5_qulpo"]
 
 [node name="MainScene" type="Node2D"]
-script = ExtResource("1_8s3b3")
-next_level = ExtResource("2_8s3b3")
+script = ExtResource("1_r6vdu")
+next_level = ExtResource("2_s1bpp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 modulate = Color(0.44195396, 0.30823013, 0.07724511, 1)
 position = Vector2(960, 540)
-tile_map_data = PackedByteArray("AAAJAAAAAAABAAAAAAAAAAUAAAABAAAAAAD2//r/AAABAAAAAAD3//r/AAABAAAAAAD4//r/AAABAAAAAAD5//r/AAABAAAAAAD6//r/AAABAAAAAAD7//r/AAABAAAAAAD8//r/AAABAAAAAAD9//r/AAABAAAAAAD+//r/AAABAAAAAAD///r/AAABAAAAAAAAAPr/AAABAAAAAAABAPr/AAABAAAAAAACAPr/AAABAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAAFAPr/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAJAPv/AAABAAAAAAAJAPz/AAABAAAAAAAJAP3/AAABAAAAAAAJAP7/AAABAAAAAAAJAP//AAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAAAAAD6/wUAAAABAAAAAAD5/wUAAAABAAAAAAD4/wUAAAABAAAAAAD3/wUAAAABAAAAAAD2/wUAAAABAAAAAAD2/wQAAAABAAAAAAD2/wMAAAABAAAAAAD2/wIAAAABAAAAAAD2/wEAAAABAAAAAAD2/wAAAAABAAAAAAD2////AAABAAAAAAD2//v/AAABAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAAAAAD2//7/AAABAAAAAAD3//v/AAACAAAAABAIAPv/AAACAAAAAAAIAAQAAAACAAAAACAJAAQAAAABAAAAAAD3/wQAAAACAAAAADD3////AAABAAAAAAD4////AAABAAAAAAD4//7/AAABAAAAAAAIAP//AAABAAAAAAAHAP//AAABAAAAAAAHAP7/AAABAAAAAAD///3/AAABAAAAAAD9//7/AAABAAAAAAD9////AAABAAAAAAD+////AAABAAAAAAD///7/AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP7/AAABAAAAAAABAP//AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAA=")
-tile_set = ExtResource("3_mj76i")
+tile_map_data = PackedByteArray("AAAJAAAAAAABAAAAAAAAAAUAAAABAAAAAAD2//r/AAABAAAAAAD3//r/AAABAAAAAAD4//r/AAABAAAAAAD5//r/AAABAAAAAAD6//r/AAABAAAAAAD7//r/AAABAAAAAAD8//r/AAABAAAAAAD9//r/AAABAAAAAAD+//r/AAABAAAAAAD///r/AAABAAAAAAAAAPr/AAABAAAAAAABAPr/AAABAAAAAAACAPr/AAABAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAAFAPr/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAJAPv/AAABAAAAAAAJAPz/AAABAAAAAAAJAP3/AAABAAAAAAAJAP7/AAABAAAAAAAJAP//AAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAAAAAD6/wUAAAABAAAAAAD5/wUAAAABAAAAAAD4/wUAAAABAAAAAAD3/wUAAAABAAAAAAD2/wUAAAABAAAAAAD2/wQAAAABAAAAAAD2/wMAAAABAAAAAAD2/wIAAAABAAAAAAD2/wEAAAABAAAAAAD2/wAAAAABAAAAAAD2////AAABAAAAAAD2//v/AAABAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAAAAAD2//7/AAABAAAAAAD3//v/AAACAAAAABAIAPv/AAACAAAAAAAIAAQAAAACAAAAACAJAAQAAAABAAAAAAD3/wQAAAACAAAAADA=")
+tile_set = ExtResource("4_rmy57")
 
 [node name="Debris" type="Node2D" parent="."]
 
-[node name="Debris1" parent="Debris" instance=ExtResource("5_naavy")]
-position = Vector2(1235, 903)
-gravity_scale = 0.5
+[node name="Debris1" parent="Debris" instance=ExtResource("3_8i3m3")]
+position = Vector2(1743, 146)
 
-[node name="Debris2" parent="Debris" instance=ExtResource("5_naavy")]
-position = Vector2(755, 888)
-gravity_scale = 0.5
+[node name="Debris2" parent="Debris" instance=ExtResource("3_8i3m3")]
+position = Vector2(208, 146)
 
-[node name="Debris3" parent="Debris" instance=ExtResource("5_naavy")]
+[node name="Debris3" parent="Debris" instance=ExtResource("3_8i3m3")]
 position = Vector2(208, 931)
-gravity_scale = 0.5
 
-[node name="Debris4" parent="Debris" instance=ExtResource("5_naavy")]
-position = Vector2(1745, 934)
-gravity_scale = 0.5
+[node name="Debris4" parent="Debris" instance=ExtResource("3_8i3m3")]
+position = Vector2(1743, 931)
 
-[node name="Goal" parent="." instance=ExtResource("6_gh4cy")]
-position = Vector2(798, 406)
-scale = Vector2(3, 3)
+[node name="Goal" parent="." instance=ExtResource("5_qulpo")]
+position = Vector2(960, 548)
+scale = Vector2(10, 10)
 
-[node name="Goal2" parent="." instance=ExtResource("6_gh4cy")]
-position = Vector2(1005.00006, 392)
-scale = Vector2(3, 3)
-
-[node name="Goal3" parent="." instance=ExtResource("6_gh4cy")]
-position = Vector2(1798.9998, 405.99997)
-scale = Vector2(3, 3)
-
-[node name="Goal4" parent="." instance=ExtResource("6_gh4cy")]
-position = Vector2(107, 402.99997)
-scale = Vector2(3, 3)
-
-[node name="Player" parent="." instance=ExtResource("4_mdw0g")]
-position = Vector2(960, 658)
+[node name="Player" parent="." instance=ExtResource("2_21xmu")]
+position = Vector2(960, 548)

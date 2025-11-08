@@ -1,72 +1,180 @@
-[gd_scene load_steps=10 format=4 uid="uid://dol21lqgy8kcm"]
+[gd_scene load_steps=11 format=4 uid="uid://b7rlrdbpdhfv0"]
 
-[ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_0dsjn"]
-[ext_resource type="PackedScene" uid="uid://cmxl67tohet2p" path="res://levels/the_end.tscn" id="2_ldkys"]
-[ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="3_dm5g0"]
-[ext_resource type="Texture2D" uid="uid://buh252og38ico" path="res://icon.svg" id="4_ldkys"]
-[ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="4_vp6pq"]
-[ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="5_66nwl"]
-[ext_resource type="PackedScene" uid="uid://db761xxnodbrx" path="res://goal/goal.tscn" id="6_t5gjd"]
-[ext_resource type="Script" uid="uid://iq2a726ws01e" path="res://levels/line_2d.gd" id="8_dm5g0"]
+[ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_udvx3"]
+[ext_resource type="PackedScene" uid="uid://g06rtq1ek2mn" path="res://levels/level6.tscn" id="2_udvx3"]
+[ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="3_6uckl"]
+[ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="4_d6jip"]
+[ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="5_kkm8t"]
+[ext_resource type="PackedScene" uid="uid://db761xxnodbrx" path="res://goal/goal.tscn" id="6_cpuyl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dm5g0"]
-radius = 20.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_udvx3"]
+radius = 40.0
+
+[sub_resource type="Animation" id="Animation_1xfnq"]
+resource_name = "rotate"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.133333, 8, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 2.0943951023931953, 4.1887902047863905, 6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_6uckl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d6jip"]
+_data = {
+&"RESET": SubResource("Animation_6uckl"),
+&"rotate": SubResource("Animation_1xfnq")
+}
 
 [node name="MainScene" type="Node2D"]
-script = ExtResource("1_0dsjn")
-next_level = ExtResource("2_ldkys")
+script = ExtResource("1_udvx3")
+next_level = ExtResource("2_udvx3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 modulate = Color(0.44195396, 0.30823013, 0.07724511, 1)
 position = Vector2(960, 540)
-tile_map_data = PackedByteArray("AAAJAAAAAAABAAAAAAAAAAUAAAABAAAAAAD2//r/AAABAAAAAAD3//r/AAABAAAAAAD4//r/AAABAAAAAAD5//r/AAABAAAAAAD6//r/AAABAAAAAAD7//r/AAABAAAAAAD8//r/AAABAAAAAAD9//r/AAABAAAAAAD+//r/AAABAAAAAAD///r/AAABAAAAAAAAAPr/AAABAAAAAAABAPr/AAABAAAAAAACAPr/AAABAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAAFAPr/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAJAPv/AAABAAAAAAAJAPz/AAABAAAAAAAJAP3/AAABAAAAAAAJAP7/AAABAAAAAAAJAP//AAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAAAAAD6/wUAAAABAAAAAAD5/wUAAAABAAAAAAD4/wUAAAABAAAAAAD3/wUAAAABAAAAAAD2/wUAAAABAAAAAAD2/wQAAAABAAAAAAD2/wMAAAABAAAAAAD2/wIAAAABAAAAAAD2/wEAAAABAAAAAAD2/wAAAAABAAAAAAD2////AAABAAAAAAD2//v/AAABAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAAAAAD2//7/AAABAAAAAAD3//v/AAACAAAAABAIAPv/AAACAAAAAAAIAAQAAAACAAAAACAJAAQAAAABAAAAAAD3/wQAAAACAAAAADD4/wMAAAACAAAAACD6/wMAAAABAAAAAAD8/wMAAAABAAAAAAD+/wMAAAABAAAAAAAAAAMAAAABAAAAAAACAAMAAAABAAAAAAAEAAMAAAABAAAAAAAGAAAAAAABAAAAAAAFAAAAAAABAAAAAAAEAAAAAAABAAAAAAADAAAAAAABAAAAAAACAAAAAAABAAAAAAABAAAAAAABAAAAAAAAAAAAAAABAAAAAAD//wAAAAABAAAAAAD+/wAAAAABAAAAAAD9/wAAAAABAAAAAAD8/wAAAAABAAAAAAD7/wAAAAABAAAAAAD6/wAAAAABAAAAAAD5/wAAAAABAAAAAAD4/wEAAAACAAAAABD3/wEAAAABAAAAAAD6//7/AAABAAAAAAAGAP//AAACAAAAACD4/wAAAAACAAAAACD8//7/AAABAAAAAAD+//7/AAABAAAAAAD///7/AAABAAAAAAABAP7/AAABAAAAAAACAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAAMAAAABAAAAAAA=")
-tile_set = ExtResource("3_dm5g0")
-
-[node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("start", "end")]
-points = PackedVector2Array(547, 596, 1246, 505)
-width = 5.0
-default_color = Color(0.64, 0.64, 0.64, 1)
-script = ExtResource("8_dm5g0")
-start = NodePath("../Ball")
-end = NodePath("../Player")
-
-[node name="Ball" type="RigidBody2D" parent="."]
-position = Vector2(932, 718)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-shape = SubResource("CircleShape2D_dm5g0")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ball"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_ldkys")
-
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Ball"]
-node_a = NodePath("..")
-node_b = NodePath("../../Player")
-length = 85.0
-rest_length = 60.0
+tile_map_data = PackedByteArray("AAAJAAAAAAABAAAAAAAAAAUAAAABAAAAAAD2//r/AAABAAAAAAD3//r/AAABAAAAAAD4//r/AAABAAAAAAD5//r/AAABAAAAAAD6//r/AAABAAAAAAD7//r/AAABAAAAAAD8//r/AAABAAAAAAD9//r/AAABAAAAAAD+//r/AAABAAAAAAD///r/AAABAAAAAAAAAPr/AAABAAAAAAABAPr/AAABAAAAAAACAPr/AAABAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAAFAPr/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAJAPv/AAABAAAAAAAJAPz/AAABAAAAAAAJAP3/AAABAAAAAAAJAP7/AAABAAAAAAAJAP//AAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAAAAAD6/wUAAAABAAAAAAD5/wUAAAABAAAAAAD4/wUAAAABAAAAAAD3/wUAAAABAAAAAAD2/wUAAAABAAAAAAD2/wQAAAABAAAAAAD2/wMAAAABAAAAAAD2/wIAAAABAAAAAAD2/wEAAAABAAAAAAD2/wAAAAABAAAAAAD2////AAABAAAAAAD2//v/AAABAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAAAAAD2//7/AAABAAAAAAD3//v/AAACAAAAABAIAPv/AAACAAAAAAAIAAQAAAACAAAAACAJAAQAAAABAAAAAAD3/wQAAAACAAAAADA=")
+tile_set = ExtResource("5_kkm8t")
 
 [node name="Debris" type="Node2D" parent="."]
 
-[node name="Debris1" parent="Debris" instance=ExtResource("5_66nwl")]
-position = Vector2(1212, 994)
-gravity_scale = 0.5
+[node name="Debris1" parent="Debris" instance=ExtResource("4_d6jip")]
+position = Vector2(1743, 146)
 
-[node name="Debris2" parent="Debris" instance=ExtResource("5_66nwl")]
-position = Vector2(592, 1010)
-gravity_scale = 0.5
+[node name="Debris2" parent="Debris" instance=ExtResource("4_d6jip")]
+position = Vector2(208, 146)
 
-[node name="Debris3" parent="Debris" instance=ExtResource("5_66nwl")]
-position = Vector2(204, 992)
-gravity_scale = 0.5
+[node name="Debris3" parent="Debris" instance=ExtResource("4_d6jip")]
+position = Vector2(208, 931)
 
-[node name="Debris4" parent="Debris" instance=ExtResource("5_66nwl")]
-position = Vector2(1601, 1006)
-gravity_scale = 0.5
+[node name="Debris4" parent="Debris" instance=ExtResource("4_d6jip")]
+position = Vector2(1745, 934)
 
-[node name="Goal" parent="." instance=ExtResource("6_t5gjd")]
-position = Vector2(148, 543)
+[node name="Goal" parent="." instance=ExtResource("6_cpuyl")]
+position = Vector2(960, 548)
 scale = Vector2(10, 10)
 
-[node name="Player" parent="." instance=ExtResource("4_vp6pq")]
-position = Vector2(933, 719)
+[node name="Rotator" type="AnimatableBody2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(-216, 20)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(-145, -138)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D2"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(-196, -65)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D8"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(-194, 109)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D9"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(146, -109)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D10"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(171, 134)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D11"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(211, 55)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D4"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(199, -33)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D12"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(108, 207)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D5"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Rotator"]
+position = Vector2(-131, 191)
+shape = SubResource("CircleShape2D_udvx3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Rotator/CollisionShape2D6"]
+scale = Vector2(4, 4)
+color = Color(0.43137255, 0.3019608, 0.07450981, 1)
+polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rotator"]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_d6jip")
+}
+autoplay = "rotate"
+
+[node name="Player" parent="." instance=ExtResource("3_6uckl")]
+position = Vector2(960, 548)
