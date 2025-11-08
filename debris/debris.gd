@@ -9,6 +9,8 @@ var goal = 0
 var ok_color = Color("43b500ff")
 var not_ok_color = Color("ffff59")
 
+var last_on_screen_pos = Vector2(0,0)
+
 func push_from_player(_player:Node2D, c:KinematicCollision2D):
 	apply_force(-1 *  IMPULSE_STR * c.get_normal())
 
@@ -25,3 +27,8 @@ func _integrate_forces(state):
 
 func _process(_delta: float) -> void:
 	modulate = ok_color if goal > 0 else not_ok_color
+	if global_position.x > 0 && global_position.x < 1920 \
+			&& global_position.y > 0 && global_position.y < 1080:
+		last_on_screen_pos = global_position
+	else:
+		global_position = last_on_screen_pos
