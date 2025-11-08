@@ -15,6 +15,11 @@ run/main_scene="uid://tk2vhowixmy5"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Console="*res://addons/console/console.gd"
+GLOBAL="*res://GLOBAL.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -25,7 +30,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/publish/plugin.cfg")
+enabled=PackedStringArray("res://addons/console/plugin.cfg", "res://addons/publish/plugin.cfg")
 
 [input]
 
