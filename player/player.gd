@@ -8,7 +8,7 @@ var delay = DELAY_BETWEEN_RAGE
 const DELAY_BETWEEN_RAGE = 3
 const VELOCITY = 600
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var i = Input.get_vector("l", "r", "u", "d")
 	velocity = VELOCITY * i
 	
