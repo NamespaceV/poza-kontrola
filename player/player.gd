@@ -4,11 +4,13 @@ var attacks : Array[PackedScene] = [
 	load("res://damage/boom.tscn")
 ]
 
-var delay = 3
+var delay = DELAY_BETWEEN_RAGE
+const DELAY_BETWEEN_RAGE = 3
+const VELOCITY = 600
 
 func _process(delta: float) -> void:
 	var i = Input.get_vector("l", "r", "u", "d")
-	velocity = 300 * i
+	velocity = VELOCITY * i
 	
 	if move_and_slide():
 		var c = get_last_slide_collision()
@@ -18,7 +20,7 @@ func _process(delta: float) -> void:
 	
 	delay -= delta
 	if delay <= 0:
-		delay = 3
+		delay = DELAY_BETWEEN_RAGE
 		var a = attacks.pick_random().instantiate() as Node2D
 		get_tree().root.add_child(a)
 		a.global_position = global_position

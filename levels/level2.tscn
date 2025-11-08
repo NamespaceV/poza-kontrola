@@ -12,18 +12,21 @@ script = ExtResource("1_r6vdu")
 next_level = ExtResource("2_s1bpp")
 
 [node name="Player" parent="." instance=ExtResource("2_21xmu")]
-position = Vector2(849, 548)
+position = Vector2(960, 548)
 
 [node name="Debris" type="Node2D" parent="."]
 
 [node name="Debris1" parent="Debris" instance=ExtResource("3_8i3m3")]
-position = Vector2(908, 284)
+position = Vector2(1743, 146)
 
 [node name="Debris2" parent="Debris" instance=ExtResource("3_8i3m3")]
-position = Vector2(256, 215)
+position = Vector2(208, 146)
 
 [node name="Debris3" parent="Debris" instance=ExtResource("3_8i3m3")]
-position = Vector2(208, 275)
+position = Vector2(208, 931)
+
+[node name="Debris4" parent="Debris" instance=ExtResource("3_8i3m3")]
+position = Vector2(1743, 931)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 modulate = Color(0.44195396, 0.30823013, 0.07724511, 1)
@@ -32,5 +35,5 @@ tile_map_data = PackedByteArray("AAAJAAAAAAABAAAAAAAAAAUAAAABAAAAAAD2//r/AAABAAA
 tile_set = ExtResource("4_rmy57")
 
 [node name="Goal" parent="." instance=ExtResource("5_qulpo")]
-position = Vector2(1176, 335)
+position = Vector2(960, 548)
 scale = Vector2(10, 10)
