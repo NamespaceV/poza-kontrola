@@ -22,3 +22,4 @@ func spawn_explosion():
 	var n = s.instantiate() as Node2D
 	add_child(n)
 	n.global_position = $"../PlayerHappy".global_position
+	$"../Hate".play()

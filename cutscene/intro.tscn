@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://db2jb28m2v7h5"]
+[gd_scene load_steps=13 format=3 uid="uid://db2jb28m2v7h5"]
 
 [ext_resource type="Texture2D" uid="uid://0fiibcaoqyvk" path="res://goal/goal.png" id="1_q8cy2"]
 [ext_resource type="Texture2D" uid="uid://bejgfn6sm2ltj" path="res://player/player.png" id="2_oskik"]
 [ext_resource type="Texture2D" uid="uid://cg0rfbd5fmcpg" path="res://player/player_happy.png" id="2_re8o7"]
 [ext_resource type="Script" uid="uid://cbl5cx2b0qr87" path="res://cutscene/intro.gd" id="3_re8o7"]
 [ext_resource type="Texture2D" uid="uid://dncbejkynq2ja" path="res://player/player_dmg.png" id="4_nm57x"]
+[ext_resource type="AudioStream" uid="uid://bbvmfnxjtnlk" path="res://audio/hate.wav" id="6_wde3h"]
 
 [sub_resource type="Animation" id="Animation_oskik"]
 resource_name = "intro"
@@ -721,7 +722,7 @@ tracks/19/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_prld6"]
-length = 2.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -729,10 +730,10 @@ tracks/0/path = NodePath("PlayerHappy:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.76666665, 1.2, 1.6, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.76666665, 1.2, 1.6, 2, 2.4, 2.766667, 3.2000003, 3.6000001, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(2, 2), Vector2(0.8, 0.8), Vector2(2, 2), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(2, 2), Vector2(0.8, 0.8), Vector2(2, 2), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(2, 2), Vector2(0.8, 0.8), Vector2(2, 2), Vector2(1, 1)]
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -917,10 +918,10 @@ tracks/17/path = NodePath("CanvasLayer/Control/RichTextLabel:text")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.8333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["why is there so much trash?!", "there are trash cans everywhere here!"]
+"values": ["why is there so much TRASH ?!", "even with all the TRASH CANS!"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wde3h"]
@@ -1035,3 +1036,6 @@ position = Vector2(2060, 1238)
 scale = Vector2(3, 3)
 color = Color(1, 1, 0.34901962, 1)
 polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
+
+[node name="Hate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wde3h")
