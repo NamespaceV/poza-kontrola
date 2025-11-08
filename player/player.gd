@@ -3,6 +3,7 @@ extends CharacterBody2D
 var attacks : Array[PackedScene] = [
 	load("res://damage/boom.tscn")
 ]
+@onready var anim = $AnimationPlayer
 
 var delay = DELAY_BETWEEN_RAGE
 const DELAY_BETWEEN_RAGE = 3
@@ -22,6 +23,6 @@ func _physics_process(delta: float) -> void:
 	if delay <= 0:
 		delay = DELAY_BETWEEN_RAGE
 		var a = attacks.pick_random().instantiate() as Node2D
-		get_tree().root.add_child(a)
-		a.global_position = global_position
+		$Dmg.add_child(a)
+		anim.play("dmg")
 	

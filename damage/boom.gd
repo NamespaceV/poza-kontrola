@@ -1,8 +1,5 @@
 extends Node2D
 
-const V_DEBRIES_MAX = 600
-const IMPULSE_STR = 2000 * 4
-
 
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
