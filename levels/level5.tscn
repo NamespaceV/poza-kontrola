@@ -46,9 +46,6 @@ node_b = NodePath("../../Player")
 length = 85.0
 rest_length = 60.0
 
-[node name="Player" parent="." instance=ExtResource("4_vp6pq")]
-position = Vector2(933, 719)
-
 [node name="Debris" type="Node2D" parent="."]
 
 [node name="Debris1" parent="Debris" instance=ExtResource("5_66nwl")]
@@ -70,3 +67,6 @@ gravity_scale = 0.5
 [node name="Goal" parent="." instance=ExtResource("6_t5gjd")]
 position = Vector2(148, 543)
 scale = Vector2(10, 10)
+
+[node name="Player" parent="." instance=ExtResource("4_vp6pq")]
+position = Vector2(933, 719)

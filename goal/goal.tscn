@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://db761xxnodbrx"]
+[gd_scene load_steps=4 format=3 uid="uid://db761xxnodbrx"]
 
 [ext_resource type="Script" uid="uid://bqyc4rpnh6j2a" path="res://goal/goal.gd" id="1_6aq0c"]
+[ext_resource type="Texture2D" uid="uid://0fiibcaoqyvk" path="res://goal/goal.png" id="2_7c8bl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ara5k"]
 
@@ -12,9 +13,9 @@ script = ExtResource("1_6aq0c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ara5k")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.16000003, 1, 0.17400002, 0.64705884)
-polygon = PackedVector2Array(0, -10, 3, -9, 6, -7, 8, -5, 10, -2, 10, 0, 9, 3, 7, 7, 4, 9, 1, 10, -2, 10, -6, 8, -9, 5, -10, -1, -8, -6, -3, -10)
+[node name="Goal" type="Sprite2D" parent="."]
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("2_7c8bl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
