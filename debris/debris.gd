@@ -2,7 +2,8 @@ class_name Debris
 extends RigidBody2D
 
 const MAX_SPEED = 1_200
-const IMPULSE_STR = 2_000
+
+const PUSH_IMPULSE_STR = 2_000
 const BOOM_IMPULSE_STR = 10_000
 
 var goal = 0
@@ -12,7 +13,7 @@ var not_ok_color = Color("ffff59")
 var last_on_screen_pos = Vector2(0,0)
 
 func push_from_player(_player:Node2D, c:KinematicCollision2D):
-	apply_force(-1 *  IMPULSE_STR * c.get_normal())
+	apply_force(-1 *  PUSH_IMPULSE_STR * c.get_normal())
 
 func push_from_boom(boom_pos:Vector2):
 	var n = (global_position - boom_pos).normalized()

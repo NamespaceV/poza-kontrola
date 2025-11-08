@@ -13,8 +13,10 @@ func _physics_process(delta: float) -> void:
 	var i = Input.get_vector("l", "r", "u", "d")
 	velocity = VELOCITY * i
 	
-	if move_and_slide():
-		var c = get_last_slide_collision()
+	move_and_slide()
+
+	for idx in get_slide_collision_count():
+		var c = get_slide_collision(idx)
 		var r = c.get_collider() as Debris
 		if r:
 			r.push_from_player(self, c)
