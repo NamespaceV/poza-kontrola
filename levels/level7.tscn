@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=4 uid="uid://dol21lqgy8kcm"]
 
 [ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_0dsjn"]
-[ext_resource type="PackedScene" uid="uid://cmxl67tohet2p" path="res://levels/the_end.tscn" id="2_ldkys"]
+[ext_resource type="PackedScene" uid="uid://cmxl67tohet2p" path="res://cutscene/outro.tscn" id="2_ldkys"]
 [ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="3_dm5g0"]
 [ext_resource type="Texture2D" uid="uid://buh252og38ico" path="res://icon.svg" id="4_ldkys"]
 [ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="4_vp6pq"]
 [ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="5_66nwl"]
 [ext_resource type="PackedScene" uid="uid://db761xxnodbrx" path="res://goal/goal.tscn" id="6_t5gjd"]
-[ext_resource type="Script" uid="uid://iq2a726ws01e" path="res://levels/line_2d.gd" id="8_dm5g0"]
+[ext_resource type="Script" uid="uid://iq2a726ws01e" path="res://levels/level7-line_2d.gd" id="8_dm5g0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dm5g0"]
 radius = 20.0
