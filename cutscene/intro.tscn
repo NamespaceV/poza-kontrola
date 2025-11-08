@@ -1,0 +1,1037 @@
+[gd_scene load_steps=12 format=3 uid="uid://db2jb28m2v7h5"]
+
+[ext_resource type="Texture2D" uid="uid://0fiibcaoqyvk" path="res://goal/goal.png" id="1_q8cy2"]
+[ext_resource type="Texture2D" uid="uid://bejgfn6sm2ltj" path="res://player/player.png" id="2_oskik"]
+[ext_resource type="Texture2D" uid="uid://cg0rfbd5fmcpg" path="res://player/player_happy.png" id="2_re8o7"]
+[ext_resource type="Script" uid="uid://cbl5cx2b0qr87" path="res://cutscene/intro.gd" id="3_re8o7"]
+[ext_resource type="Texture2D" uid="uid://dncbejkynq2ja" path="res://player/player_dmg.png" id="4_nm57x"]
+
+[sub_resource type="Animation" id="Animation_oskik"]
+resource_name = "intro"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHappy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector2(0, 540), Vector2(307, 254), Vector2(480, 540), Vector2(720, 254), Vector2(960, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["la la la
+what a happy day in the park"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerHappy:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_re8o7")]
+}
+
+[sub_resource type="Animation" id="Animation_nm57x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHappy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 540)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Debris/Debris1:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-234, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Debris/Debris1:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(328, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Debris/Debris2:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(950, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Debris/Debris2:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-190, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Debris/Debris4:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2038, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Debris/Debris4:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(439, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Debris/Debris5:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1742.0001, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Debris/Debris5:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-123, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Debris/Debris6:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(277.00012, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Debris/Debris6:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-182, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Debris/Debris7:position:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(173, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Debris/Debris7:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1268, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Debris/Debris8:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(957, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Debris/Debris8:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1453, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Debris/Debris9:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2060, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Debris/Debris9:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1238, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PlayerHappy:texture")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_oskik")]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CanvasLayer/Control/RichTextLabel:text")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["intro - test"]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PlayerHappy:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_re8o7"]
+resource_name = "intro2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHappy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 540)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Debris/Debris1:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(-234, -0.25, 0, 0.25, 0, 781, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Debris/Debris1:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(328, -0.25, 0, 0.25, 0, 487, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Debris/Debris2:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(950, -0.25, 0, 0.25, 0, 963.00006, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Debris/Debris2:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(-190, -0.25, 0, 0.25, 0, 412, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Debris/Debris4:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(2038, -0.25, 0, 0.25, 0, 1086.0001, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Debris/Debris4:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(439, -0.25, 0, 0.25, 0, 539, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Debris/Debris5:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(1742.0001, -0.25, 0, 0.25, 0, 1078.0001, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Debris/Debris5:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(-123, -0.25, 0, 0.25, 0, 449, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Debris/Debris6:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(277.00012, -0.25, 0, 0.25, 0, 862, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Debris/Debris6:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(-182, -0.25, 0, 0.25, 0, 415, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Debris/Debris7:position:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(173, -0.25, 0, 0.25, 0, 850, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Debris/Debris7:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(1268, -0.25, 0, 0.25, 0, 629, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Debris/Debris8:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(957, -0.25, 0, 0.25, 0, 961, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Debris/Debris8:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(1453, -0.25, 0, 0.25, 0, 676, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Debris/Debris9:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(2060, -0.25, 0, 0.25, 0, 1062, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Debris/Debris9:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(1238, -0.25, 0, 0.25, 0, 641, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PlayerHappy:texture")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2.2817745),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_re8o7"), ExtResource("2_oskik")]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CanvasLayer/Control/RichTextLabel:text")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["what's happening ?!"]
+}
+
+[sub_resource type="Animation" id="Animation_wde3h"]
+resource_name = "intro3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHappy:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Debris/Debris1:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(781, 0, 0, 0, 0, 781, 0, 0, 0, 0, -234, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Debris/Debris1:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(487, 0, 0, 0, 0, 487, 0, 0, 0, 0, 328, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Debris/Debris2:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(963.00006, 0, 0, 0, 0, 963.00006, 0, 0, 0, 0, 950, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Debris/Debris2:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(412, 0, 0, 0, 0, 412, 0, 0, 0, 0, -190, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Debris/Debris4:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1086.0001, 0, 0, 0, 0, 1086.0001, 0, 0, 0, 0, 2038, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Debris/Debris4:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(539, 0, 0, 0, 0, 539, 0, 0, 0, 0, 439, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Debris/Debris5:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1078.0001, 0, 0, 0, 0, 1078.0001, 0, 0, 0, 0, 1742.0001, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Debris/Debris5:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(449, 0, 0, 0, 0, 449, 0, 0, 0, 0, -123, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Debris/Debris6:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(862, 0, 0, 0, 0, 862, 0, 0, 0, 0, 277.00012, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Debris/Debris6:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(415, 0, 0, 0, 0, 415, 0, 0, 0, 0, -182, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Debris/Debris7:position:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(850, 0, 0, 0, 0, 850, 0, 0, 0, 0, 173, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Debris/Debris7:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(629, 0, 0, 0, 0, 629, 0, 0, 0, 0, 1268, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Debris/Debris8:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(961, 0, 0, 0, 0, 961, 0, 0, 0, 0, 957, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Debris/Debris8:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(676, 0, 0, 0, 0, 676, 0, 0, 0, 0, 1453, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Debris/Debris9:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1062, 0, 0, 0, 0, 1062, 0, 0, 0, 0, 2060, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Debris/Debris9:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(641, 0, 0, 0, 0, 641, 0, 0, 0, 0, 1238, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 2)
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CanvasLayer/Control/RichTextLabel:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I HATE TRASH !!!!"]
+}
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("AnimationPlayer")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.46666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_explosion"
+}]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PlayerHappy:texture")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_oskik"), ExtResource("4_nm57x"), ExtResource("2_oskik")]
+}
+
+[sub_resource type="Animation" id="Animation_prld6"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHappy:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.76666665, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(2, 2), Vector2(0.8, 0.8), Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Debris/Debris1:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(781, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Debris/Debris1:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(487, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Debris/Debris2:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(963.00006, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Debris/Debris2:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(412, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Debris/Debris4:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1086.0001, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Debris/Debris4:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(539, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Debris/Debris5:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1078.0001, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Debris/Debris5:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(449, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Debris/Debris6:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(862, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Debris/Debris6:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(415, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Debris/Debris7:position:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(850, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Debris/Debris7:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(629, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Debris/Debris8:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(961, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Debris/Debris8:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(676, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Debris/Debris9:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1062, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Debris/Debris9:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(641, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CanvasLayer/Control/RichTextLabel:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["why is there so much trash?!", "there are trash cans everywhere here!"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wde3h"]
+_data = {
+&"RESET": SubResource("Animation_nm57x"),
+&"intro": SubResource("Animation_oskik"),
+&"intro2": SubResource("Animation_re8o7"),
+&"intro3": SubResource("Animation_prld6"),
+&"intro4": SubResource("Animation_wde3h")
+}
+
+[node name="Intro" type="Node2D"]
+
+[node name="Goal" type="Sprite2D" parent="."]
+position = Vector2(285, 398)
+texture = ExtResource("1_q8cy2")
+
+[node name="Goal2" type="Sprite2D" parent="."]
+position = Vector2(640, 205)
+texture = ExtResource("1_q8cy2")
+
+[node name="Goal3" type="Sprite2D" parent="."]
+position = Vector2(1255, 228)
+texture = ExtResource("1_q8cy2")
+
+[node name="Goal4" type="Sprite2D" parent="."]
+position = Vector2(1595, 354)
+texture = ExtResource("1_q8cy2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wde3h")
+}
+autoplay = "intro"
+script = ExtResource("3_re8o7")
+
+[node name="PlayerHappy" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_oskik")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+text = "intro - test"
+
+[node name="Debris" type="Node2D" parent="."]
+
+[node name="Debris1" type="Polygon2D" parent="Debris"]
+position = Vector2(-234, 328)
+scale = Vector2(3, 3)
+color = Color(1, 1, 0.34901962, 1)
+polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
+
+[node name="Debris2" type="Polygon2D" parent="Debris"]
+position = Vector2(950, -190)
+scale = Vector2(3, 3)
+color = Color(1, 1, 0.34901962, 1)
+polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
+
+[node name="Debris4" type="Polygon2D" parent="Debris"]
+position = Vector2(2038, 439)
+scale = Vector2(3, 3)
+color = Color(1, 1, 0.34901962, 1)
+polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
+
+[node name="Debris5" type="Polygon2D" parent="Debris"]
+position = Vector2(1742.0001, -123)
+scale = Vector2(3, 3)
+color = Color(1, 1, 0.34901962, 1)
+polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
+
+[node name="Debris6" type="Polygon2D" parent="Debris"]
+position = Vector2(277.00012, -182)
+scale = Vector2(3, 3)
+color = Color(1, 1, 0.34901962, 1)
+polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
+
+[node name="Debris7" type="Polygon2D" parent="Debris"]
+position = Vector2(173, 1268)
+scale = Vector2(3, 3)
+color = Color(1, 1, 0.34901962, 1)
+polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
+
+[node name="Debris8" type="Polygon2D" parent="Debris"]
+position = Vector2(957, 1453)
+scale = Vector2(3, 3)
+color = Color(1, 1, 0.34901962, 1)
+polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
+
+[node name="Debris9" type="Polygon2D" parent="Debris"]
+position = Vector2(2060, 1238)
+scale = Vector2(3, 3)
+color = Color(1, 1, 0.34901962, 1)
+polygon = PackedVector2Array(0, -10, 3, -8, 7, -6, 10, -1, 5, 3, 7, 6, 4, 9, -4, 8, -1, 2, -4, 4, -6, 2, -6, 5, -10, 3, -4, -7, -3, -1, -2, -7, -4, -8)
