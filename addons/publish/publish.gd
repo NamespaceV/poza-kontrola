@@ -24,12 +24,16 @@ func build_and_publish():
 	var project_path = ProjectSettings.globalize_path("res://")
 
 	print("Running build and publish for ", project_path)
+	
+	print("WEB")
+	
 	var out = []
 	var commands = [
 		"/c",
 		"cd \"%s\"" % [project_path],
 		"&& Godot_v4.5.1-stable_win64.exe --headless --export-debug \"Web\" export/web/index.html"
 	]
+	await get_tree().create_timer(0.1).timeout
 	OS.execute("cmd",commands,out)
 
 	print("Creating a zip archive ")
@@ -38,6 +42,7 @@ func build_and_publish():
 		"cd \"%s\"" % [project_path],
 		"&& 7z a export/web.zip export/web/*"
 	]
+	await get_tree().create_timer(0.1).timeout
 	OS.execute("cmd",commands,out)
 
 	print("Uploading to itch")
@@ -46,7 +51,37 @@ func build_and_publish():
 		"cd \"%s\"" % [project_path],
 		"&& butler.exe push export/web.zip namespacev/wsf2025:web"
 	]
+	await get_tree().create_timer(0.1).timeout
 	OS.execute("cmd",commands,out)
+
+	print("WIN")
+	
+	commands = [
+		"/c",
+		"cd \"%s\"" % [project_path],
+		"&& Godot_v4.5.1-stable_win64.exe --headless --export-debug \"Win\" export/win/game.exe"
+	]
+	await get_tree().create_timer(0.1).timeout
+	OS.execute("cmd",commands,out)
+
+	print("Creating a zip archive ")
+	commands = [
+		"/c",
+		"cd \"%s\"" % [project_path],
+		"&& 7z a export/win.zip export/win/*"
+	]
+	await get_tree().create_timer(0.1).timeout
+	OS.execute("cmd",commands,out)
+
+	print("Uploading to itch")
+	commands = [
+		"/c",
+		"cd \"%s\"" % [project_path],
+		"&& butler.exe push export/win.zip namespacev/wsf2025:win"
+	]
+	await get_tree().create_timer(0.1).timeout
+	OS.execute("cmd",commands,out)
+
 
 	
 	print("Export done")
