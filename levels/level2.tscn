@@ -1,36 +1,36 @@
-[gd_scene load_steps=7 format=4 uid="uid://tk2vhowixmy5"]
+[gd_scene load_steps=7 format=4 uid="uid://bl5mg24vkaewe"]
 
-[ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bl5mg24vkaewe" path="res://levels/level2.tscn" id="2_7mycd"]
-[ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="2_h2yge"]
-[ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://db761xxnodbrx" path="res://goal/goal.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://r4al7mton3m7" path="res://levels/level.gd" id="1_r6vdu"]
+[ext_resource type="PackedScene" uid="uid://cf1sgvdbmmljs" path="res://player/player.tscn" id="2_21xmu"]
+[ext_resource type="PackedScene" uid="uid://cmxl67tohet2p" path="res://levels/the_end.tscn" id="2_s1bpp"]
+[ext_resource type="PackedScene" uid="uid://c8gu52p80m2fx" path="res://debris/debris.tscn" id="3_8i3m3"]
+[ext_resource type="TileSet" uid="uid://dvhxpanximvnc" path="res://walls/tile_set.tres" id="4_rmy57"]
+[ext_resource type="PackedScene" uid="uid://db761xxnodbrx" path="res://goal/goal.tscn" id="5_qulpo"]
 
 [node name="MainScene" type="Node2D"]
-script = ExtResource("1_lquwl")
-next_level = ExtResource("2_7mycd")
+script = ExtResource("1_r6vdu")
+next_level = ExtResource("2_s1bpp")
 
-[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+[node name="Player" parent="." instance=ExtResource("2_21xmu")]
 position = Vector2(849, 548)
 
 [node name="Debris" type="Node2D" parent="."]
 
-[node name="Debris1" parent="Debris" instance=ExtResource("2_h2yge")]
-position = Vector2(1718, 185)
+[node name="Debris1" parent="Debris" instance=ExtResource("3_8i3m3")]
+position = Vector2(908, 284)
 
-[node name="Debris2" parent="Debris" instance=ExtResource("2_h2yge")]
+[node name="Debris2" parent="Debris" instance=ExtResource("3_8i3m3")]
 position = Vector2(256, 215)
 
-[node name="Debris3" parent="Debris" instance=ExtResource("2_h2yge")]
-position = Vector2(178, 925)
+[node name="Debris3" parent="Debris" instance=ExtResource("3_8i3m3")]
+position = Vector2(208, 275)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 modulate = Color(0.44195396, 0.30823013, 0.07724511, 1)
 position = Vector2(960, 540)
 tile_map_data = PackedByteArray("AAAJAAAAAAABAAAAAAAAAAUAAAABAAAAAAD2//r/AAABAAAAAAD3//r/AAABAAAAAAD4//r/AAABAAAAAAD5//r/AAABAAAAAAD6//r/AAABAAAAAAD7//r/AAABAAAAAAD8//r/AAABAAAAAAD9//r/AAABAAAAAAD+//r/AAABAAAAAAD///r/AAABAAAAAAAAAPr/AAABAAAAAAABAPr/AAABAAAAAAACAPr/AAABAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAAFAPr/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAJAPv/AAABAAAAAAAJAPz/AAABAAAAAAAJAP3/AAABAAAAAAAJAP7/AAABAAAAAAAJAP//AAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAAAAAD6/wUAAAABAAAAAAD5/wUAAAABAAAAAAD4/wUAAAABAAAAAAD3/wUAAAABAAAAAAD2/wUAAAABAAAAAAD2/wQAAAABAAAAAAD2/wMAAAABAAAAAAD2/wIAAAABAAAAAAD2/wEAAAABAAAAAAD2/wAAAAABAAAAAAD2////AAABAAAAAAD2//v/AAABAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAAAAAD2//7/AAABAAAAAAD3//v/AAACAAAAABAIAPv/AAACAAAAAAAIAAQAAAACAAAAACAJAAQAAAABAAAAAAD3/wQAAAACAAAAADA=")
-tile_set = ExtResource("3_h2yge")
+tile_set = ExtResource("4_rmy57")
 
-[node name="Goal" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(1750, 925)
+[node name="Goal" parent="." instance=ExtResource("5_qulpo")]
+position = Vector2(1176, 335)
 scale = Vector2(10, 10)

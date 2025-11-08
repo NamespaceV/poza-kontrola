@@ -5,6 +5,9 @@ const MAX_SPEED = 1_200
 const IMPULSE_STR = 2_000
 const BOOM_IMPULSE_STR = 10_000
 
+var goal = 0
+var ok_color = Color("43b500ff")
+var not_ok_color = Color("ffff59")
 
 func push_from_player(_player:Node2D, c:KinematicCollision2D):
 	apply_force(-1 *  IMPULSE_STR * c.get_normal())
@@ -19,3 +22,6 @@ func _integrate_forces(state):
 	if velocity.length() > MAX_SPEED:
 		velocity = velocity.normalized() * MAX_SPEED
 		state.linear_velocity = velocity
+
+func _process(_delta: float) -> void:
+	modulate = ok_color if goal > 0 else not_ok_color
