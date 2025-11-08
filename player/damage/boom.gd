@@ -19,7 +19,7 @@ func apply_physics_impulse():
 	var space_state = get_world_2d().direct_space_state
 	var result = space_state.intersect_shape(params)
 	for item in result:
-		print(item.collider)
+		#print(item.collider)
 		var r = item.collider as Debris
 		if r:
 			r.push_from_boom(global_position)

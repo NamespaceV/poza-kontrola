@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var attacks : Array[PackedScene] = [
-	load("res://damage/boom.tscn")
+	load("res://player/damage/boom.tscn")
 ]
 @onready var anim = $AnimationPlayer
 
